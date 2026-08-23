@@ -283,6 +283,8 @@ JAZZMIN_SETTINGS = {
     "site_header": "Spotify Admin",
     "site_brand": "Spofity Admin",
     "welcome_sign": "Welcome to Spotify Admin",
+    "site_icon": "favicon.png",
+    "site_logo": "favicon.png",
 
     "custom_css": "admin/css/custom.css",
 }
