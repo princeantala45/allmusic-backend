@@ -263,3 +263,16 @@ def check_device(request):
             "message": "Access granted."
         }
     )
+    
+    
+from django.http import JsonResponse
+def uptime_check(request):
+
+    return JsonResponse(
+        {
+            "status": "ok",
+            "service": "All Music Backend",
+            "message": "Backend is running"
+        },
+        status=200
+    )

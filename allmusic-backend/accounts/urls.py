@@ -3,8 +3,10 @@ from django.urls import path
 from .views import (
     login_view,
     signup_view,
+    uptime_check,
     check_device,
 )
+
 
 
 urlpatterns = [
@@ -26,5 +28,11 @@ urlpatterns = [
         check_device,
         name="check_device"
     ),
+    
 
+    path(
+    "uptime/",
+    uptime_check,
+    name="uptime_check"
+),
 ]
