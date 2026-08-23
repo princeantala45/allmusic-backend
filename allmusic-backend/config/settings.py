@@ -279,6 +279,10 @@ STATICFILES_STORAGE = (
 
 JAZZMIN_SETTINGS = {
     # your existing settings...
+    "site_title": "Spotify",
+    "site_header": "Spotify Admin",
+    "site_brand": "Spofity Admin",
+    "welcome_sign": "Welcome to Spotify Admin",
 
     "custom_css": "admin/css/custom.css",
 }
