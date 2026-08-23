@@ -47,15 +47,14 @@ INSTALLED_APPS = [
     "corsheaders",
     "accounts",
 ]
-
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
 
     "whitenoise.middleware.WhiteNoiseMiddleware",
 
-    "django.contrib.sessions.middleware.SessionMiddleware",
-
     "corsheaders.middleware.CorsMiddleware",
+
+    "django.contrib.sessions.middleware.SessionMiddleware",
 
     "django.middleware.common.CommonMiddleware",
 
@@ -132,8 +131,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
@@ -147,16 +144,23 @@ MAILERS = {
 
 CORS_ALLOWED_ORIGINS = [
     "https://allmusic45.netlify.app",
-     "http://127.0.0.1:5500",
-    "http://localhost:5500",    
+
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+
+    "http://127.0.0.1:5501",
+    "http://localhost:5501",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://allmusic45.netlify.app",
-     "http://127.0.0.1:5500",
-    "http://localhost:5500",
-]
 
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+
+    "http://127.0.0.1:5501",
+    "http://localhost:5501",
+]
 
 JAZZMIN_SETTINGS = {
 
@@ -221,6 +225,7 @@ JAZZMIN_SETTINGS = {
         {
             "name": "All Music Website",
             "url": "https://allmusic45.netlify.app/",
+            
             "new_window": True,
         },
     ],
@@ -229,36 +234,39 @@ JAZZMIN_SETTINGS = {
 
     "show_ui_builder": True,
 }
+JAZZMIN_UI_TWEAKS = {
+    "theme": "default",
 
+    "default_theme_mode": "light",
 
-# JAZZMIN_UI_TWEAKS = {
-#     "theme": "darkly",
-#     "navbar_small_text": False,
-#     "footer_small_text": False,
-#     "body_small_text": False,
-#     "brand_small_text": False,
-#     "brand_colour": "navbar-dark",
-#     "accent": "accent-warning",
-#     "navbar": "navbar-dark",
-#     "no_navbar_border": False,
-#     "sidebar": "sidebar-dark-warning",
-#     "sidebar_nav_small_text": False,
-#     "sidebar_disable_expand": False,
-#     "sidebar_nav_child_indent": True,
-#     "sidebar_nav_compact_style": False,
-#     "sidebar_nav_legacy_style": False,
-#     "sidebar_nav_flat_style": False,
-#     "theme": "darkly",
-#     "button_classes": {
-#         "primary": "btn-warning",
-#         "secondary": "btn-secondary",
-#         "info": "btn-info",
-#         "warning": "btn-warning",
-#         "danger": "btn-danger",
-#         "success": "btn-success",
-#     },
-# }
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
 
+    "brand_colour": "navbar-dark",
+    "accent": "accent-primary",
+
+    "navbar": "navbar-white navbar-light",
+    "no_navbar_border": False,
+
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success",
+    },
+}
 
 STATIC_URL = "/static/"
 
@@ -267,3 +275,10 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = (
     "whitenoise.storage.CompressedManifestStaticFilesStorage"
 )
+
+
+JAZZMIN_SETTINGS = {
+    # your existing settings...
+
+    "custom_css": "admin/css/custom.css",
+}
